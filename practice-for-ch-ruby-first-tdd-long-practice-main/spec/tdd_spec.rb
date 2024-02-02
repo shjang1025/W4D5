@@ -26,3 +26,25 @@ describe Array do
   end
 end
 
+describe "#my_transpose" do
+  let(:rows) {[[0, 1, 2], [3, 4, 5], [6, 7, 8]]}
+  let(:transposed) {[[0, 3, 6], [1, 4, 7], [2, 5, 8]]}
+  # before(:each) do 
+  #   rows = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+  #   transposed = [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
+  # end
+
+  it "takes in 2-dimensional array with the same number of rows and columns" do
+    same_length= rows.all?{|ele| ele.length == rows.length}
+
+    expect { my_transpose(rows) }.to_not raise_error
+    expect(same_length).to eq(true)
+
+  end
+
+  it "return in an array with the rows and columns transposed" do 
+    expect(my_transpose(rows)).to eq(transposed)
+  end
+
+
+end

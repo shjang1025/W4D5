@@ -21,4 +21,15 @@ def my_uniq(array)
     res 
 end
 
+def my_transpose(array)
+    res = []
+    (0...array.length).each do |col|
+        temp = []
+        (0...array.length).each do |row|
+            temp << array[row][col]
+        end 
+        res << temp
+    end
+    res
+end
 
